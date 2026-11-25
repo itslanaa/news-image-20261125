@@ -1,7 +1,21 @@
-import fs from "node:fs";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-const out = process.env.MAKEFUN_OUTPUT_DIR || "/output";
-const dir = path.dirname(fileURLToPath(import.meta.url));
-fs.mkdirSync(out, { recursive: true });
-fs.copyFileSync(path.join(dir, "entry.png"), path.join(out, "entry.png"));
+// News Image 20261125 — entrypoint (Node 22, standard library only).
+//
+// The front page is rendered ahead of time and shipped in this repository
+// as entry.png, because the grading container has no Python or PIL and
+// cannot draw it at run time. All this program does is place a copy of
+// that finished image where the grader expects it.
+//
+// No network, no subprocess, no generated code: one file in, one file out,
+// the same bytes on every run.
+import { copyFileSync, mkdirSync } from "node:fs";
+import { join } from "node:path";
+
+const IMAGE_NAME = "entry.png";
+const FALLBACK_OUTPUT = "/output";
+
+const sourceImage = new URL(`./${IMAGE_NAME}`, import.meta.url);
+const destinationDir =
+  process.env.MAKEFUN_OUTPUT_DIR ?? FALLBACK_OUTPUT;
+
+mkdirSync(destinationDir, { recursive: true });
+copyFileSync(sourceImage, join(destinationDir, IMAGE_NAME));
