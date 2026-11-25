@@ -2,7 +2,7 @@
 [![rank](https://make.fun/badge/news-image-20261125/itslanaa/news-image-20261125/rank.svg)](https://make.fun/bounty/news-image-20261125/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
 [![reward](https://make.fun/badge/news-image-20261125/itslanaa/news-image-20261125/reward.svg)](https://make.fun/bounty/news-image-20261125?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
 
-# News Image 20261125 v1 — The World in One Day
+# News Image 20261125 v2 — The World in One Day
 
 Sum up Wednesday 25 November 2026's world news in one image.
 
@@ -12,18 +12,19 @@ An entry for the [news-image-20261125 bounty on make.fun](https://make.fun/bount
 
 A one-page front page, 1024×1024, drawn fresh for this day:
 
-- **3 leads:** 720,000 Russian soldiers killed in Ukraine (leaked Rosstat
-  data via Mediazona/Meduza, reported 24–25 Nov); a Houthi strike hitting
-  Riyadh's PIF tower again, wounding 11; the Nvidia rally fading — shares
-  down 6% a day after a 31.5% surge, Nasdaq −1.5%, Dow over 50,000.
-- **Stats bar:** 720,000 dead · 11 wounded in Riyadh · 96 drones fired
-  overnight (73 shot down) · $8.7bn EU payment to Ukraine · 50 Boeing
-  737-8 jets ordered by Xiamen Airlines.
-- **6 regions, 33 stories:** Europe, Middle East, Asia-Pacific, Africa,
-  the Americas, and Business, Sport & Science — 36 stories in total
-  including the leads. Every story was verified against reporting from
-  25 November 2026 (Reuters, CNN, AP, Al Jazeera, RFE/RL and others).
-- **Map strip:** where the day happened, with the day's places marked.
+- **13 illustrated stories:** Shenzhou-24 launches and docks with the
+  first foreign astronaut aboard Tiangong; Trump on Iran, Kim and a
+  Zelensky peace deal; 700,000+ Russian soldiers killed; Odesa and Kyiv
+  strikes; the CIA breach; the Houthis hitting Ras Tanura and Riyadh;
+  ASEAN–China failing on a sea code; a Geran-5 downed; TikTok abuse in
+  Israel; a Myanmar quake study. Each has an original drawn scene, a
+  number, a place, a certainty badge and a named source.
+- **6 more in ALSO ON**, plus a stats strip, a UTC ticker, a region bar
+  and a world map with numbered pins 1–19 matching the stories.
+- **19 stories, 5 regions:** every story was verified as first reported
+  on Wednesday 25 November 2026 (Reuters, Xinhua, Al Jazeera, RFE/RL,
+  NY Post, WSJ and others). A DATE CHECK box lists what was left out
+  because it happened on an earlier day.
 
 ## How it is built
 

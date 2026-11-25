@@ -331,9 +331,9 @@ SCENES = {"rocket": scene_rocket, "whitehouse": scene_whitehouse,
 # (n, place, certainty, label, headline, summary, source, scene)
 LEADS = [
     (1, "JIUQUAN, CHINA", "CONFIRMED", "SHENZHOU-24",
-     "China launches Shenzhou-24 with first foreign astronaut",
-     "A Long March-2F lifts off at 00:18 UTC. Pakistani pilot Zeeshan Ali "
-     "is the first foreigner aboard.",
+     "Shenzhou-24 docks with first foreigner aboard",
+     "Lifts off 00:18 UTC, docks 03:56 UTC. Zeeshan Ali is the first "
+     "foreigner aboard.",
      "Reuters", "rocket"),
     (2, "WASHINGTON, US", "REPORTED", "TRUMP ON IRAN",
      "Trump: Iran war \u2018funded\u2019 through January",
@@ -368,10 +368,10 @@ SMALL = [
      "CIA hit by cyber breach",
      "A breach exposes data on a CIA network; the DNI is also hit.",
      "CNN / Fox", "server"),
-    (9, "YEMEN", "ONGOING", "PORTS THREATENED",
-     "Houthis threaten Saudi ports",
-     "Houthis vow to hit Saudi ports if Hodeidah is struck.",
-     "Al Jazeera", "port"),
+    (9, "YEMEN", "REPORTED", "REFINERY HIT",
+     "Houthis hit Saudi refinery, Riyadh district",
+     "Houthis say they hit Ras Tanura refinery and Riyadh's district.",
+     "Reuters", "port"),
     (10, "WASHINGTON, US", "REPORTED", "KIM LETTERS",
      "Trump: Kim \u2018love letters\u2019 could restart",
      "Trump says his \u2018love letters\u2019 with Kim could restart.",
@@ -393,8 +393,16 @@ SMALL = [
 ALSO_ON = [
     (14, "Washington", "Trump: Zelensky peace deal could come by January",
      "NY Post"),
-    (15, "Washington", "Iran suing US over school airstrike",
+    (15, "Tehran", "Iran suing US over school airstrike",
      "NY Post"),
+    (16, "Pyongyang", "N. Korea expels Swiss envoy",
+     "Reuters"),
+    (17, "Persian Gulf", "Trump weighs a second carrier",
+     "WSJ"),
+    (18, "Iowa", "Army to detonate 5 tons of lead azide",
+     "AP"),
+    (19, "Benghazi", "Two Libyan soldiers die of wounds",
+     "Paris Times"),
 ]
 
 STATS = [
@@ -410,13 +418,12 @@ TICKER = [
     ("00:52", "CIA breach"),
     ("01:01", "700,000+ dead"),
     ("01:06", "ASEAN code fails"),
-    ("01:26", "Odesa strike"),
-    ("02:44", "Geran-5 downed"),
+    ("03:56", "Shenzhou-24 docks"),
 ]
 
-REGIONS = [("EUROPE", 4, (31, 78, 121)), ("MIDDLE EAST", 3, (196, 110, 0)),
-           ("ASIA-PACIFIC", 3, (163, 18, 18)), ("AMERICAS", 5, (90, 40, 140)),
-           ("AFRICA", 0, (40, 120, 60)), ("OCEANIA", 0, (0, 130, 130))]
+REGIONS = [("EUROPE", 4, (31, 78, 121)), ("MIDDLE EAST", 4, (196, 110, 0)),
+           ("ASIA-PACIFIC", 4, (163, 18, 18)), ("AMERICAS", 6, (90, 40, 140)),
+           ("AFRICA", 1, (40, 120, 60)), ("OCEANIA", 0, (0, 130, 130))]
 
 DATE_CHECK = (
     "Left out, before Wednesday: Benghazi warship sinking (Sun 22) \u00b7 "
@@ -430,15 +437,18 @@ DATE_CHECK = (
 )
 
 # display offsets (px) for pins that would otherwise stack on the map
-PIN_OFFSETS = {4: (-14, 10), 6: (16, -14), 10: (-16, 12), 8: (14, 12),
-               11: (16, -8)}
+PIN_OFFSETS = {4: (-14, 10), 6: (18, -16), 10: (-18, 14), 8: (16, 14),
+               11: (16, -8), 14: (-10, 22), 15: (-18, -12), 17: (16, 12),
+               18: (-22, -8), 19: (-16, 16)}
 
 # (lon, lat) for each numbered pin
 PINS = {1: (98.5, 40.9), 2: (-77.0, 39.0), 3: (37.6, 55.7),
         4: (30.7, 46.5), 5: (30.5, 50.4), 6: (-74.5, 41.5),
         7: (101.7, 3.1), 8: (-79.5, 37.5), 9: (42.9, 14.8),
         10: (-80.5, 35.5), 11: (33.0, 48.5), 12: (35.2, 31.8),
-        13: (96.0, 21.0)}
+        13: (96.0, 21.0), 14: (-77.0, 39.0), 15: (51.4, 35.7),
+        16: (129.1, 41.0), 17: (51.5, 26.5), 18: (-93.6, 42.0),
+        19: (20.1, 32.1)}
 
 CONTINENTS = [
     [(-168, 66), (-140, 70), (-125, 72), (-110, 73), (-95, 80), (-85, 70),
@@ -499,14 +509,14 @@ def main():
     f_top = font(SANS_B, 13)
     d.text((mx, 8), "THE WORLD IN ONE DAY \u00b7 ONE PAGE",
            font=f_top, fill=RED)
-    right = "15 STORIES \u00b7 4 REGIONS \u00b7 ALL FROM WEDNESDAY 25 NOVEMBER 2026"
+    right = "19 STORIES \u00b7 5 REGIONS \u00b7 ALL FROM WEDNESDAY 25 NOVEMBER 2026"
     d.text((W - mx, 8), right, font=f_top, fill=RED, anchor="ra")
     d.line([mx, 28, W - mx, 28], fill=INK, width=2)
 
     d.text((W // 2, 34), "Wednesday 25 November 2026",
            font=font(SERIF_B, 56), fill=INK, anchor="ma")
     d.text((W // 2, 94),
-           "Shenzhou-24 lifts off with a Pakistani aboard \u25c6 Trump: Iran war "
+           "Shenzhou-24 docks with a Pakistani aboard \u25c6 Trump: Iran war "
            "\u2018funded\u2019 to January \u25c6 700,000 Russian dead",
            font=font(SERIF_I, 16), fill=RED, anchor="ma")
     d.line([mx, 114, W - mx, 114], fill=INK, width=1)
@@ -605,10 +615,10 @@ def main():
     for n, place, head, src in ALSO_ON:
         num_badge(d, ax + 10, ay + 8, n, r=10)
         hy = text_lines(d, ax + 26, ay,
-                        wrap(d, f"{place}: {head}", font(SANS_B, 11), 348),
-                        font(SANS_B, 11), leading=14)
-        d.text((ax + 26, hy), f"({src})", font=font(SANS_I, 10), fill=GREY)
-        ay = hy + 22
+                        wrap(d, f"{place}: {head} ({src})",
+                             font(SANS, 10.5), 348),
+                        font(SANS, 10.5), leading=13)
+        ay = hy + 8
     d.text((ax, ay + 6),
            "The day\u2019s later stories join here in the evening edition.",
            font=font(SERIF_I, 11), fill=GREY)
